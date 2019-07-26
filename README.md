@@ -1,5 +1,5 @@
 # net_info
-python net_info.py -h
+
 usage: net_info.py [-h] ip_str
 
 Prints a table with network information for the given IP address or network.
