@@ -19,13 +19,14 @@ if __name__ == "__main__":
         network = ipaddress.ip_network(args.ip_str, strict=False)
         net_version = str(network.version)
         network_ip = str(network.network_address)
-        networks = list(network.subnets())
         broadcast = str(network.broadcast_address)
         netmask = str(network.netmask)
         hostmask = str(network.hostmask)
-        hosts = list(network.hosts())
-        total_hosts = len(hosts)
-        total_nets = len(networks)
+        hosts = network.hosts()
+        total_hosts = 0
+        
+        for host in hosts:
+            total_hosts += 1
 
         table = texttable.Texttable()
         
